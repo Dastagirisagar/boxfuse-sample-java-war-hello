@@ -7,7 +7,7 @@ pipeline {
   stages {
       stage("git"){
           steps{
-            git branch: 'master', url: 'https://github.com/GREATCODERHYD/boxfuse-sample-java-war-hello.git'
+                git branch: 'master', url: 'https://github.com/Dastagirisagar/boxfuse-sample-java-war-hello.git'
           
           }
       }
@@ -18,7 +18,7 @@ pipeline {
       }
       stage("deploy"){
           steps{
-             deploy adapters: [tomcat9(credentialsId: 'TOMCAT004CREDENTIALS', path: '', url: 'http://15.207.222.78:8080/')], contextPath: 'sample', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'aae73344-3ada-4dce-9c9e-40cc2d7e512f', path: '', url: 'http://3.110.119.91:8080/')], contextPath: 'pipeline', war: '**/*.war'
           }
       }
   }
